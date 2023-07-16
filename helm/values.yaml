@@ -36,9 +36,13 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+container:
+  port: 8080
+  
 service:
   type: LoadBalancer
-  port: 8080
+  port: 80
+  targetPort: 8080
 
 ingress:
   enabled: false
